@@ -1,0 +1,130 @@
+---
+import { Image } from "astro:assets";
+import LogoContra from "../images/contra-logo.png";
+import LogoJ from "../images/j25-logo.png";
+import LogoRoca from "../images/logo_roca.png";
+import WhatsappLogo from "../images/WhatsappLogo.astro";
+const message = "";
+const WSLink = encodeURI(`https://wa.me/573053848653?text=${message}`);
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/versions/bulma-no-dark-mode.min.css"
+    />
+    <title>Invitacion</title>
+  </head>
+  <body>
+    <main>
+      <div class="columns">
+        <div class="column logo">
+          <Image src={LogoContra} alt="ContraCorriente" />
+          <Image src={LogoJ} alt="ContraCorriente" />
+          <Image src={LogoRoca} alt="Casa Roca Medellin" />
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatibus ducimus iure eos, consectetur in magni illo. Veniam
+            nesciunt qui, repellat atque accusantium distinctio quis ex,
+            voluptatem quidem, suscipit placeat debitis?
+          </p>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column">
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Dia</th>
+                  <th>Horas</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Domingos</td>
+                  <td>8.30 am <br /> y 11 am</td>
+                  <td>Servicio Dominical</td>
+                </tr>
+                <tr>
+                  <td>Miercoles</td>
+                  <td>7pm</td>
+                  <td>Recarga espiritual</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column">
+          <a href={WSLink} target="_blank" class="ws-btn">
+            <WhatsappLogo />
+            <span> Comunicate con nosotros </span>
+          </a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+
+<style lang="scss">
+  body {
+    background-image: linear-gradient(
+      36deg,
+      #e4afcb 0%,
+      #b8cbb8 0%,
+      #b8cbb8 0%,
+      #e2c58b 30%,
+      #c2ce9c 64%,
+      #7edbdc 100%
+    );
+    min-height: 100vh;
+  }
+  main {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+
+    > div {
+      margin-bottom: 2rem;
+    }
+  }
+
+  table {
+    background-color: rgba(white, 0.8);
+  }
+
+  p {
+    text-align: center;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  a.ws-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: linear-gradient(-16deg, rgb(4, 198, 75), #9bea9b);
+    color: white;
+    font-weight: bold;
+    padding: 0.6rem;
+    border-radius: 60px;
+  }
+</style>
